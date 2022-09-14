@@ -3,6 +3,8 @@ site:
   url: https://docs.fastblockchains.com
   start_page: general::index.adoc
   robots: allow
+  keys:
+    google_analytics: 'G-EG44KE5HLM'
 content:
   sources:
   - url: https://github.com/fastblockchains/docs.git

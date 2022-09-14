@@ -1,22 +1,21 @@
 name: CI
 on:
   push:
-    branches: [ feature/configure-antora ]
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 jobs:
-  container-test-job:
+  build-nd-publish:
     runs-on: ubuntu-latest
     container:
       image: antora/antora:latest
     steps:
       - uses: actions/checkout@v3
-      - name: Build
-        run: |
-            antora antora-playbook.yml
-            ls -l public
-      - name: Publish
+      - name: Build Antora
+        run: antora antora-playbook.yml
+      - name: Publish Antora
         uses: cloudflare/wrangler-action@2.0.0
         with:
-          # workingDirectory: public
           command: pages publish --project-name=docs-fbc-com public
           apiToken: ${{ secrets.CF_API_TOKEN }} 
           accountId: ${{ secrets.CF_ACCOUNT_ID }}           
