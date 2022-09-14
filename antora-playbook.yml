@@ -1,0 +1,28 @@
+site:
+  title: Documentation
+  url: https://docs.fastblockchains.com
+  start_page: general::index.adoc
+  robots: allow
+content:
+  sources:
+  - url: https://github.com/fastblockchains/docs.git
+    start_path: general
+    # tags: [release/*, '!release/*-patch']
+    branches: [main]
+  - url: https://github.com/fastblockchains/docs.git
+    start_path: api
+    # tags: [release/*, '!release/*-patch']
+    branches: [main]    
+asciidoc:
+  attributes:
+    # experimental: ''
+    # idprefix: ''
+    # idseparator: '-'
+    # page-pagination: ''
+    source-language: asciidoc@
+ui:
+ bundle:
+   url: https://github.com/fastblockchains/docs/releases/download/v0.1.2/ui-bundle.zip
+   snapshot: true
+output:
+  dir: ./public

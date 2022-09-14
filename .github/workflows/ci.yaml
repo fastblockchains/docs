@@ -1,0 +1,14 @@
+name: CI
+on:
+  push:
+    branches: [ feature/configure-antora ]
+jobs:
+  container-test-job:
+    runs-on: ubuntu-latest
+    container:
+      image: antora/antora:latest
+      volumes:
+        - $(pwd):/opt
+    steps:
+      - name: List Directories
+        run: ls -l /opt
