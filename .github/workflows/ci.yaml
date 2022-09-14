@@ -7,8 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: antora/antora:latest
-      volumes:
-        - $(pwd):/opt
     steps:
+      - uses: actions/checkout@v3
       - name: List Directories
-        run: ls -l /opt
+        run: ls -la
