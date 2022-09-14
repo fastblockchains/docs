@@ -9,5 +9,13 @@ jobs:
       image: antora/antora:latest
     steps:
       - uses: actions/checkout@v3
+      - name: Build
       - run: |
             antora antora-playbook.yml
+            ls -l public
+      - name: Publish
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          workingDirectory: public
+          apiToken: ${{ secrets.CF_API_TOKEN }} 
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}           
