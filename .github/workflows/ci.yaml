@@ -9,5 +9,5 @@ jobs:
       image: antora/antora:latest
     steps:
       - uses: actions/checkout@v3
-      - name: List Directories
-        run: ls -la
+      - run: |
+            antora antora-playbook.yml
