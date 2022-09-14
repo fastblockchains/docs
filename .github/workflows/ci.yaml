@@ -16,7 +16,7 @@ jobs:
       - name: Publish
         uses: cloudflare/wrangler-action@2.0.0
         with:
-          workingDirectory: public
-          command: pages publish --project-name=docs-fbc-com
+          # workingDirectory: public
+          command: pages publish --project-name=docs-fbc-com public
           apiToken: ${{ secrets.CF_API_TOKEN }} 
           accountId: ${{ secrets.CF_ACCOUNT_ID }}           
