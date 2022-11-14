@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  ui:
+    image: node:10-alpine
+    restart: unless-stopped
+    command:
+      - /bin/sh
+      - -c
+      - |
+        npm install .
+        node_modules/gulp/bin/gulp.js preview
+    working_dir: /mnt
+    volumes:
+      - ./ui:/mnt
+    ports:
+      - "5252:5252"
