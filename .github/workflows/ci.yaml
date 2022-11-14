@@ -1,9 +1,9 @@
 name: CI
+
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+
 jobs:
   build-nd-publish:
     runs-on: ubuntu-latest
@@ -16,6 +16,6 @@ jobs:
       - name: Publish Antora
         uses: cloudflare/wrangler-action@2.0.0
         with:
-          command: pages publish --project-name=docs-fbc-com public
+          command: pages publish --project-name=docs-fbc-com --branch=main public
           apiToken: ${{ secrets.CF_API_TOKEN }} 
           accountId: ${{ secrets.CF_ACCOUNT_ID }}           

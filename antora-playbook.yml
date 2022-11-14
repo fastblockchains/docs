@@ -24,7 +24,7 @@ asciidoc:
     source-language: asciidoc@
 ui:
  bundle:
-   url: https://github.com/fastblockchains/docs/releases/download/v0.1.2/ui-bundle.zip
+   url: https://github.com/fastblockchains/docs/releases/download/v0.1.3/ui-bundle.zip
    snapshot: true
 output:
   dir: ./public
